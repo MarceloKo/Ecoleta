@@ -19,6 +19,12 @@ export default class PointsController{
 
         return response.json(points)
     }
+    async getAll(request:Request,response:Response){
+       
+        const points = await knex('points')
+        
+        return response.json(points)
+    }
 
     async show(request:Request,response:Response){
         const {id} = request.params;
